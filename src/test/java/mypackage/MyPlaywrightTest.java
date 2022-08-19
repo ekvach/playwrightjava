@@ -59,6 +59,6 @@ public class MyPlaywrightTest {
         assertThat(page.locator("id=result-stats")
                        .innerText())
                 .as("asdasd")
-                .matches(".*: \\d(\\h\\d{3}){3} \\(\\d,\\d* .\\)\\h");
+                .matches(".*(:?)\\h\\d([\\h,]\\d{3}){3}\\h(results\\h)?\\(\\d\\.\\d*\\h.*\\)\\h");
     }
 }
