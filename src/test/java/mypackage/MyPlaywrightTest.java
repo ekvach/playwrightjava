@@ -1,7 +1,6 @@
 package mypackage;
 
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.microsoft.playwright.Browser;
@@ -15,17 +14,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
-
 public class MyPlaywrightTest {
     private static Playwright playwright;
     private static Browser browser;
 
     private BrowserContext context;
     private Page page;
-
-    Dimension screenSize = Toolkit.getDefaultToolkit()
-                                  .getScreenSize();
 
     @BeforeAll
     public static void launchBrowser() {
@@ -42,8 +36,7 @@ public class MyPlaywrightTest {
 
     @BeforeEach
     public void createContextAndPage() {
-        context = browser.newContext(new Browser.NewContextOptions().setViewportSize(screenSize.width,
-                screenSize.height));
+        context = browser.newContext();
         context.browser();
         page = context.newPage();
     }
